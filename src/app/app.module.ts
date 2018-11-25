@@ -2,11 +2,16 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { ReservationsPage } from '../pages/reservations/reservations';
+import { ReviewsPage } from '../pages/reviews/reviews';
+import { ClientsPage } from '../pages/clients/clients';
+import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
+import { InscriptionPage } from '../pages/inscription/inscription';
+import { ConnexionPage } from '../pages/connexion/connexion';
+import { LoginPage } from '../pages/login/login';
+import { ReviewPage } from '../pages/review/review';
+import { ReservationPage } from '../pages/reservation/reservation';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,10 +19,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    ReservationsPage,
+    ReviewsPage,
+    ClientsPage,
+    TabsControllerPage,
+    InscriptionPage,
+    ConnexionPage,
+    LoginPage,
+    ReviewPage,
+    ReservationPage
   ],
   imports: [
     BrowserModule,
@@ -26,10 +36,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    ReservationsPage,
+    ReviewsPage,
+    ClientsPage,
+    TabsControllerPage,
+    InscriptionPage,
+    ConnexionPage,
+    LoginPage,
+    ReviewPage,
+    ReservationPage
   ],
   providers: [
     StatusBar,
