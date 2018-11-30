@@ -9,27 +9,30 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page6">
-  <form id="connexion-form2">
+  <form id="connexion-form2" (ngSubmit)="login()" #loginForm="ngForm">
     <ion-list id="connexion-list2">
       <ion-item id="connexion-input4">
         <ion-label>
           Email
         </ion-label>
-        <ion-input type="email" placeholder=""></ion-input>
+        <ion-input type="user.email" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="connexion-input5">
         <ion-label>
           Password
         </ion-label>
-        <ion-input type="password" placeholder=""></ion-input>
+        <ion-input type="user.password" placeholder=""></ion-input>
       </ion-item>
     </ion-list>
     <div class="spacer" style="height:40px;" id="connexion-spacer1"></div>
-    <button id="connexion-button2" ion-button color="stable" block>
+    <button id="connexion-button2" ion-button color="stable" block round>
       Log in
     </button>
-    <button id="connexion-button3" ion-button clear color="positive" block href-inappbrowser="/signup">
+    <button ion-button color="danger" round *ngIf="user.error">{{user.error}}</button>
+
+  </form>
+
+      <button id="connexion-button3" ion-button clear color="positive" block (click)="goToInscription()">
       Or create an account
     </button>
-  </form>
 </ion-content>

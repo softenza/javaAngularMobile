@@ -15,6 +15,9 @@ import { ReservationPage } from '../pages/reservation/reservation';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ReservationsService } from './services/reservations.service';
+import { UsersService } from './services/users.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ReservationPage
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -49,6 +52,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    UsersService,
+    ReservationsService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

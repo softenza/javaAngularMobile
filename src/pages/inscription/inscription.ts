@@ -1,13 +1,26 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { UsersService } from '../../app/services/users.service';
+import { User } from '../../app/models/User';
+import { ReservationPage } from '../reservation/reservation';
+import { Cookie } from 'ng2-cookies/ng2-cookies';
 
 @Component({
   selector: 'page-inscription',
   templateUrl: 'inscription.html'
 })
 export class InscriptionPage {
-
-  constructor(public navCtrl: NavController) {
+  user: User = new User();
+  constructor(public navCtrl: NavController, public userService: UsersService) {
   }
-  
+
+  register() {
+    this.userService.register(this.user).subscribe(result => {
+      this.user = result;
+      if (this.user.error.startsWith('Success')) {
+        Cookie.set('user', JSON.stringify(this.user));
+        this.navCtrl.setRoot(ReservationPage);
+      }
+    });
+  }
 }
