@@ -9,32 +9,31 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page10">
-  <form id="reservation-form10">
-    <ion-item id="reservation-toggle5">
-      <ion-label>
-        Toggle
-      </ion-label>
-      <ion-toggle color="positive" checked="false"></ion-toggle>
+  <form id="reservForm" (ngSubmit)="reserver()" #reservForm="ngForm">
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime name="date" displayFormat="DD/MM/YYYY h:mm A" pickerFormat="DD/MM/YYYY h mm A" [(ngModel)]="selectedReservation.reservationDate"></ion-datetime>
     </ion-item>
-    <ion-item id="reservation-radio5">
-      <ion-label>
-        Radio
-      </ion-label>
-      <ion-radio></ion-radio>
+    <ion-item>
+      <ion-range name="rooms" [(ngModel)]="selectedReservation.nbrRooms">
+        <ion-icon range-left small name="sunny"></ion-icon>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-range>
     </ion-item>
     <ion-item id="reservation-input21">
       <ion-label>
-        Input
+        Chambres
       </ion-label>
-      <ion-input type="text" placeholder=""></ion-input>
+      <ion-input type="text" name="nbrRooms" placeholder="" [(ngModel)]="selectedReservation.nbrRooms" (onChange)="updatePriceColor()"></ion-input>
+      <ion-badge [color]="costColor" item-end>Cout: {{unitCost*selectedReservation.nbrRooms | currency:'$':'symbol':'4.2-2'}}</ion-badge>
     </ion-item>
     <ion-item id="reservation-textarea3">
       <ion-label>
-        Comment
+        Commentaire
       </ion-label>
-      <ion-textarea placeholder=""></ion-textarea>
+      <ion-textarea name ="comments" placeholder="" [(ngModel)]="selectedReservation.comment"></ion-textarea>
     </ion-item>
-    <button id="reservation-button14" ion-button color="positive" block>
+    <button id="reservation-button14" ion-button color="positive" (click)="button=1" block>
       Enregistrer
     </button>
   </form>

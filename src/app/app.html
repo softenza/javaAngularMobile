@@ -10,13 +10,13 @@
     <button id="menu-button9" ion-button color="positive" block menuClose="" on-click="goToReservations()">
       Home
     </button>
-    <button id="menu-button5" ion-button color="positive" block menuClose="" on-click="goToInscription()">
+    <button *ngIf="!user.id>0" id="menu-button5" ion-button color="positive" block menuClose="" on-click="goToInscription()">
       Inscription
     </button>
-    <button id="menu-button6" ion-button color="positive" block menuClose="" on-click="goToConnexion()">
+    <button *ngIf="!user.id>0" id="menu-button6" ion-button color="positive" block menuClose="" on-click="goToConnexion()">
       Connexion
     </button>
-    <button id="menu-button7" ion-button color="positive" block>
+    <button *ngIf="user.id>0"id="menu-button7" ion-button color="positive" block (click)="logout()">
       Deconnexion
     </button>
   </ion-content>

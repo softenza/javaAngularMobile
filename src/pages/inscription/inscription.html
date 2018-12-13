@@ -15,41 +15,41 @@
         <ion-label>
           Prenom
         </ion-label>
-        <ion-input type="text" placeholder="" name="user.firstName"></ion-input>
+        <ion-input type="text" placeholder="" name="firstName" [(ngModel)]="user.firstName"></ion-input>
       </ion-item>
       <ion-item id="inscription-input7">
         <ion-label>
           Nom
         </ion-label>
-        <ion-input type="text" placeholder="" name="user.lastName"></ion-input>
+        <ion-input type="text" placeholder="" name="lastName" [(ngModel)]="user.lastName"></ion-input>
       </ion-item>
       <ion-item id="inscription-input2">
         <ion-label>
           Email
         </ion-label>
-        <ion-input type="email" placeholder="" name="user.email"></ion-input>
+        <ion-input type="email" placeholder="" name="email" [(ngModel)]="user.email"></ion-input>
       </ion-item>
       <ion-item id="inscription-input3">
         <ion-label>
           Password
         </ion-label>
-        <ion-input type="password" placeholder="" name="user.password"></ion-input>
+        <ion-input type="password" placeholder="" name="user.password" [(ngModel)]="user.password"></ion-input>
       </ion-item>
     </ion-list>
     <ion-item id="inscription-input6">
       <ion-label>
         Phone
       </ion-label>
-      <ion-input type="tel" placeholder="" name="user.phone"></ion-input>
+      <ion-input type="tel" placeholder="" name="user.phone" [(ngModel)]="user.phone"></ion-input>
     </ion-item>
     <ion-item id="inscription-input8">
       <ion-label>
         Addresse
       </ion-label>
-      <ion-input type="text" placeholder="" name="user.address"></ion-input>
+      <ion-input type="text" placeholder="" name="user.address" [(ngModel)]="user.address"></ion-input>
     </ion-item>
     <button id="inscription-button1" ion-button color="stable" block>
-      Sign up
+      Inscrire
     </button>
     <button ion-button color="danger" round *ngIf="user.error">{{user.error}}</button>
   </form>

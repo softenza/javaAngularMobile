@@ -15,13 +15,13 @@
         <ion-label>
           Email
         </ion-label>
-        <ion-input type="user.email" placeholder=""></ion-input>
+        <ion-input type="email" name="email" [(ngModel)]="user.email" placeholder="E-mail"></ion-input>
       </ion-item>
       <ion-item id="connexion-input5">
         <ion-label>
           Password
         </ion-label>
-        <ion-input type="user.password" placeholder=""></ion-input>
+        <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
       </ion-item>
     </ion-list>
     <div class="spacer" style="height:40px;" id="connexion-spacer1"></div>
@@ -32,7 +32,7 @@
 
   </form>
 
-      <button id="connexion-button3" ion-button clear color="positive" block (click)="goToInscription()">
-      Or create an account
-    </button>
+  <button id="connexion-button3" ion-button clear color="positive" block (click)="goToInscription()">
+    Je n'ai pas de compte
+  </button>
 </ion-content>

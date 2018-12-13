@@ -51,4 +51,11 @@ export class MyApp implements OnInit {
     if (!params) params = {};
     this.navCtrl.setRoot(ReservationsPage);
   }
+
+  public logout() {
+    Cookie.deleteAll();
+    this.user = new User();
+    this.navCtrl.setRoot(ConnexionPage);
+  }
+
 }
